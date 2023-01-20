@@ -1,0 +1,22 @@
+#these are the necessary lines for database management using SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.sqlite3'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+class [insert db name](db.Model):
+    #to create a primary key(the main form of identifying objects in your database) with use [var name = db.Column("[name]", [variable type], primary_key = True)
+    #an example of this would be (_id = db.Column("id", db.Integer, primary_key = True))
+    #to create a new variable within a db, use [var name = db.Column([variable type], [any extra parameters you want to add])
+    #an example would be (name = db.Column(db.String(100), nullable = False, unique = True))
+    #you can find the different variable types at https://flask-sqlalchemy.palletsprojects.com/en/2.x/models/
+    #you can find the list of parameters at https://docs.sqlalchemy.org/en/14/core/metadata.html
+   
+if __name__ == "__main__":
+    with app.app_context():
+        db.create_all()
+    app.run(debug=True)
+    
+ #anytime you want to commit the information taken into a database, write db.session.commit()
+ #to find an object in a database, use users.query.filter_by([name of variable in db]=[object name]).first(),
+ e.g. found_user = users.query.filter_by(name=user).first() where user = name input by the user, name = "name" in database
