@@ -60,7 +60,8 @@
 <body>
     <!-- Side Navbar -->
     <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>   <!-- the 'x' button to close the sidenav -->
     
           <a class="nav-link" href="/">Inventory Management</a>
           <a class="nav-link" href="#">Customer Management</a>
@@ -78,6 +79,8 @@
     </div>
     
     <br>
+    
+    
     
     
 <!-- search bar -->    
